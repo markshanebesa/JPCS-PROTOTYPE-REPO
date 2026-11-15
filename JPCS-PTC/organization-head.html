@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Head Reports | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="css/officer-header.css">
+    <link rel="stylesheet" href="css/record-details.css">
+</head>
+<body>
+
+<header class="staff-header">
+    <div class="staff-header-content">
+        <h2 class="staff-brand">
+            The Junior Philippine Computer Society
+        </h2>
+        <nav id="officerNav" class="staff-nav"
+             aria-label="Officer navigation">
+        </nav>
+    </div>
+</header>
+<main>
+
+    <section class="intro">
+        <h1>Organization Head - View Only</h1>
+        <p>Monitor organization records without changing them.</p>
+    </section>
+
+    <section class="stats">
+        <button type="button" class="stat" data-records="students">
+            Registered Students<strong id="studentCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="Pending">
+            Pending<strong id="pendingCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="Active">
+            Active<strong id="activeCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="Inactive">
+            Inactive<strong id="inactiveCount">0</strong>
+        </button>
+    </section>
+    <section class="card" id="statRecordsSection" hidden>
+        <h2 id="statRecordsTitle">Records</h2>
+        <div id="statRecordsTable"
+             class="record-table-holder"></div>
+        <div id="statRecordDetail" hidden></div>
+        <button type="button" class="secondary"
+                id="closeStatRecords">Close Records</button>
+    </section>
+
+
+    <section class="card">
+        <h2>Organization Summary</h2>
+        <p><button class="record-view-btn" type="button"
+                   data-records="all">
+            Total Applications: <strong id="totalApps">0</strong>
+        </button></p>
+        <p><button class="record-view-btn" type="button"
+                   data-records="published-posts">
+            Published Announcements: <strong id="postsCount">0</strong>
+        </button></p>
+        <p><button class="record-view-btn" type="button"
+                   data-records="upcoming-events">
+            Upcoming Published Events: <strong id="eventsCount">0</strong>
+        </button></p>
+        <p class="notice">This page has no editing or approval controls.</p>
+    </section>
+
+    <section class="card" id="announcements">
+        <h2>Published Announcements</h2>
+        <div id="postList"></div>
+    </section>
+
+    <section class="card" id="events">
+        <h2>Upcoming Events</h2>
+        <div id="eventList"></div>
+    </section>
+
+</main>
+<footer>&copy; 2026 JPCS - PTC</footer>
+<script src="js/roles.js"></script>
+<script src="js/record-details.js"></script>
+<script src="js/organization-head.js"></script>
+</body>
+</html>

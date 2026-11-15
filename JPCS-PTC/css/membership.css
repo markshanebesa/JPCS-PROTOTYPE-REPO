@@ -1,0 +1,289 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f2;
+    color: #333;
+}
+
+header {
+    background-color: #064e35;
+    padding: 15px 20px;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand img {
+    width: 65px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.brand h2 {
+    color: #f5e729;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a,
+nav button {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav button {
+    background-color: #f5e729;
+    color: #064e35;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    background-color: #064e35;
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.page-title h1 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.card h2 {
+    color: #064e35;
+    font-size: 21px;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5e729;
+}
+
+.card h3 {
+    color: #064e35;
+    font-size: 17px;
+    margin-top: 25px;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.schedule-grid > div {
+    background-color: #e9f3ec;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.schedule-grid label {
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.schedule-grid p {
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field > label {
+    display: block;
+    color: #064e35;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.field input:not([type="radio"]),
+.field select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.field input[readonly] {
+    background-color: #eee;
+}
+
+.choices {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+}
+
+.choices label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.choices input {
+    accent-color: #064e35;
+}
+
+.error {
+    display: block;
+    color: #c62828;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.declaration {
+    line-height: 1.7;
+    padding: 15px;
+    background-color: #e9f3ec;
+    border-radius: 5px;
+}
+
+.note {
+    background-color: #fff9d7;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.main-btn,
+.secondary-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-btn {
+    background-color: #064e35;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #ddd;
+    color: #333;
+}
+
+.completed {
+    text-align: center;
+}
+
+.completed .schedule-grid {
+    text-align: left;
+}
+
+.back-section {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.back-section a {
+    color: #064e35;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #033b28;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer h3 {
+    margin: 0 0 10px;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .form-grid,
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .page-title h1 {
+        font-size: 23px;
+    }
+}

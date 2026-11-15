@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Admin | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="css/officer-header.css">
+    <link rel="stylesheet" href="css/record-details.css">
+</head>
+<body>
+
+<header class="staff-header">
+    <div class="staff-header-content">
+        <h2 class="staff-brand">
+            The Junior Philippine Computer Society
+        </h2>
+        <nav id="officerNav" class="staff-nav"
+             aria-label="Officer navigation">
+        </nav>
+    </div>
+</header>
+<main>
+
+    <section class="intro">
+        <h1>Co-Admin - Membership Management</h1>
+        <p>Review students and manage membership applications.</p>
+    </section>
+
+    <section class="stats">
+        <button type="button" class="stat" data-records="students">
+            Students<strong id="studentCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="Pending">
+            Pending<strong id="pendingCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="Active">
+            Active<strong id="activeCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="Inactive">
+            Inactive<strong id="inactiveCount">0</strong>
+        </button>
+    </section>
+    <section class="card" id="statRecordsSection" hidden>
+        <h2 id="statRecordsTitle">Records</h2>
+        <div id="statRecordsTable"
+             class="record-table-holder"></div>
+        <div id="statRecordDetail" hidden></div>
+        <button type="button" class="secondary"
+                id="closeStatRecords">Close Records</button>
+    </section>
+
+
+    <section class="card">
+        <h2>Membership Tasks</h2>
+        <p>Check applications and verify membership payments.</p>
+        <div class="actions">
+            <a class="button" href="applications.html">Review Applications</a>
+            <a class="button" href="members.html">View Members</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Student Records</h2>
+        <label for="studentSearch">Search Student</label>
+        <input id="studentSearch" type="search"
+               placeholder="Name, Student ID, or email">
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Year / Section</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card" id="studentDetailSection" hidden>
+        <h2>Complete Student and Membership Details</h2>
+        <div id="studentDetailContent"></div>
+        <button type="button" class="secondary"
+                id="closeStudentDetail">Close Details</button>
+    </section>
+
+    <section class="card" id="editStudentSection" hidden>
+        <h2>Edit Student Record</h2>
+        <p class="notice">
+            Student ID and email are fixed to avoid duplicate records.
+        </p>
+        <form id="editStudentForm">
+            <div class="form-grid">
+                <div>
+                    <label for="editSurname">Surname</label>
+                    <input id="editSurname" required>
+                </div>
+                <div>
+                    <label for="editGivenName">Given Name</label>
+                    <input id="editGivenName" required>
+                </div>
+                <div>
+                    <label for="editMiddleInitial">Middle Initial</label>
+                    <input id="editMiddleInitial" maxlength="2">
+                </div>
+                <div>
+                    <label for="editBirthDate">Birth Date</label>
+                    <input type="date" id="editBirthDate">
+                </div>
+                <div>
+                    <label for="editGender">Gender</label>
+                    <select id="editGender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div>
+                    <label for="editCourse">Course</label>
+                    <input id="editCourse" required>
+                </div>
+                <div>
+                    <label for="editYear">Year and Section</label>
+                    <input id="editYear" required>
+                </div>
+                <div>
+                    <label for="editContact">Contact Number</label>
+                    <input id="editContact">
+                </div>
+                <div>
+                    <label for="editClass">Classification</label>
+                    <select id="editClass">
+                        <option value="Regular">Regular</option>
+                        <option value="Irregular">Irregular</option>
+                    </select>
+                </div>
+            </div>
+            <h3>Membership Form (if submitted)</h3>
+            <div class="form-grid">
+                <div>
+                    <label for="editYearLevel">Year Level</label>
+                    <input id="editYearLevel">
+                </div>
+                <div>
+                    <label for="editSection">Section</label>
+                    <input id="editSection">
+                </div>
+                <div>
+                    <label for="editType">Application Type</label>
+                    <select id="editType">
+                        <option value="New Membership">New Membership</option>
+                        <option value="Renewal">Renewal</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="editReceipt">Receipt Number</label>
+                    <input id="editReceipt">
+                </div>
+                <div>
+                    <label for="editSignature">Typed Signature</label>
+                    <input id="editSignature">
+                </div>
+                <div>
+                    <label for="editSignedDate">Date Signed</label>
+                    <input type="date" id="editSignedDate">
+                </div>
+            </div>
+            <p class="notice">
+                Changes to an existing application also update its
+                printable form. Student ID and email remain unchanged.
+            </p>
+            <div class="actions">
+                <button type="submit">Save Student</button>
+                <button class="secondary" id="cancelStudent" type="button">
+                    Cancel
+                </button>
+            </div>
+            <p id="studentMessage" class="message" role="status"></p>
+        </form>
+    </section>
+
+</main>
+<footer>&copy; 2026 JPCS - PTC</footer>
+<script src="js/roles.js"></script>
+<script src="js/record-details.js"></script>
+<script src="js/co-admin.js"></script>
+</body>
+</html>

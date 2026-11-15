@@ -1,0 +1,314 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f5f2;
+    color: #333;
+}
+
+header {
+    background: #064e35;
+    padding: 15px 20px;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand img {
+    width: 65px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand h2 {
+    color: #f5e729;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a,
+nav button {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a.active {
+    color: #f5e729;
+    font-weight: bold;
+}
+
+nav button {
+    background: #f5e729;
+    color: #064e35;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    background: #064e35;
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.page-title h1 {
+    margin-top: 0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-box h3 {
+    color: #064e35;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.stat-box p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    color: #064e35;
+    font-size: 21px;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5e729;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.filters input,
+.filters select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background: #064e35;
+    color: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-grid label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    font-weight: bold;
+}
+
+.info-grid p {
+    margin-top: 6px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.main-btn,
+.secondary-btn {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-btn {
+    background: #064e35;
+    color: white;
+}
+
+.secondary-btn {
+    background: #ddd;
+    color: #333;
+}
+
+.link-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.small-btn {
+    padding: 8px 12px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.note {
+    background: #fff9d7;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.message {
+    color: #064e35;
+    font-size: 14px;
+}
+
+.results {
+    margin-top: 15px;
+}
+
+.duplicate-item {
+    padding: 12px;
+    margin-top: 10px;
+    background: #fff9d7;
+    border: 1px solid #e4d59a;
+    border-radius: 5px;
+    overflow-wrap: anywhere;
+}
+
+.back-section {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.back-section a {
+    color: #064e35;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    background: #033b28;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer h3 {
+    margin: 0 0 10px;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}

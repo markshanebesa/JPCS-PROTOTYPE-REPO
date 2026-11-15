@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Accounts | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="css/officer-header.css">
+    <link rel="stylesheet" href="css/record-details.css">
+</head>
+<body>
+
+<header class="staff-header">
+    <div class="staff-header-content">
+        <h2 class="staff-brand">
+            The Junior Philippine Computer Society
+        </h2>
+        <nav id="officerNav" class="staff-nav"
+             aria-label="Officer navigation">
+        </nav>
+    </div>
+</header>
+<main>
+
+    <section class="intro">
+        <h1>Main Admin - User Management</h1>
+        <p>Only the Main Admin can manage officer accounts.</p>
+    </section>
+
+    <section class="card">
+        <h2>Create / Edit Officer Account</h2>
+        <form id="staffForm" autocomplete="off">
+            <label for="staffName">Name</label>
+            <input id="staffName" required>
+
+            <div class="form-grid">
+                <div>
+                    <label for="staffEmail">Email</label>
+                    <input id="staffEmail" type="email" required>
+                </div>
+                <div>
+                    <label for="staffRole">Role</label>
+                    <select id="staffRole">
+                        <option value="moderator">Moderator</option>
+                        <option value="co-admin">Co-Admin</option>
+                        <option value="main-admin">Main Admin</option>
+                        <option value="organization-head">Organization Head</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="staffPassword">Password</label>
+            <input id="staffPassword" type="password"
+                   placeholder="Set password (leave empty when editing to keep it)">
+
+            <label>
+                <input id="staffActive" type="checkbox" checked>
+                Active account
+            </label>
+
+            <div class="actions">
+                <button type="submit">Save Account</button>
+                <button type="button" id="clearStaff" class="secondary">
+                    Clear
+                </button>
+            </div>
+            <p id="staffMessage" class="message" role="status"></p>
+        </form>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Officer</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="staffTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Registered Student Accounts</h2>
+        <p class="notice">Deactivate or restore student login access.</p>
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTable"></tbody>
+            </table>
+        </div>
+        <div id="staffStudentDetails" hidden></div>
+    </section>
+
+    <section class="card">
+        <h2>Activity Log</h2>
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Account</th>
+                        <th>Action</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="logsTable"></tbody>
+            </table>
+        </div>
+        <div class="actions">
+            <button id="downloadBackup" type="button">Download Backup</button>
+        </div>
+    </section>
+
+</main>
+<footer>&copy; 2026 JPCS - PTC</footer>
+<script src="js/roles.js"></script>
+<script src="js/record-details.js"></script>
+<script src="js/staff-users.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+* {
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+.jpcs-header {
+    background: #064e35;
+    padding: 18px 25px;
+}
+
+.jpcs-header-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* WEBSITE NAME */
+
+.jpcs-brand {
+    flex-shrink: 0;
+}
+
+.jpcs-brand h2 {
+    margin: 0;
+    color: #f5e729;
+    font-size: 21px;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION */
+
+.jpcs-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.jpcs-nav a {
+    color: white;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* LOGOUT */
+
+.jpcs-logout {
+    background: #f5e729;
+    color: #064e35;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* MOBILE VIEW */
+
+@media (max-width: 1100px) {
+
+    .jpcs-header-content {
+        flex-wrap: wrap;
+    }
+
+    .jpcs-nav {
+        flex-wrap: wrap;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .jpcs-brand h2 {
+        font-size: 18px;
+    }
+
+    .jpcs-nav {
+        gap: 12px;
+    }
+
+    .jpcs-nav a {
+        font-size: 12px;
+    }
+}

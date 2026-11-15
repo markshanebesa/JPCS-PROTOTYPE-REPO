@@ -1,0 +1,65 @@
+/* Common header for all officer pages. */
+.staff-header {
+    background: #064e35;
+    padding: 18px 25px;
+}
+
+.staff-header .staff-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.staff-header .staff-brand {
+    margin: 0;
+    color: #f5e729;
+    font: bold 21px Arial, sans-serif;
+    flex-shrink: 0;
+}
+
+.staff-header .staff-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-left: auto;
+}
+
+.staff-header .staff-nav a {
+    color: white;
+    font: 13px Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.staff-header .staff-nav #logoutBtn {
+    background: #f5e729;
+    color: #064e35;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    font: bold 13px Arial, sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+@media (max-width: 1050px) {
+    .staff-header .staff-header-content {
+        flex-wrap: wrap;
+    }
+
+    .staff-header .staff-nav {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .staff-header .staff-brand {
+        font-size: 18px;
+    }
+}

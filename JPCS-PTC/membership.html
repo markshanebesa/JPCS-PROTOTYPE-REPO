@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Application | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/membership.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+    
+
+<!-- HEADER -->
+
+<header class="jpcs-header">
+
+    <div class="jpcs-header-content">
+
+        <div class="jpcs-brand">
+            <h2>
+                The Junior Philippine Computer Society
+            </h2>
+        </div>
+
+        <nav class="jpcs-nav">
+
+            <a href="dashboard.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="achievements.html">
+                Achievements
+            </a>
+
+            <a href="seminars.html">
+                Seminars & Activities
+            </a>
+
+            <a href="announcements.html">
+                Announcements
+            </a>
+
+            <a href="benefits.html">
+                Member Benefits
+            </a>
+
+            <a href="membership.html">
+                Membership
+            </a>
+
+            <a href="profile.html">
+                My Profile
+            </a>
+
+            <button
+                type="button"
+                class="jpcs-logout"
+                id="logoutBtn"
+            >
+                Logout
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+    <main class="container">
+
+        <section class="page-title">
+            <h1>Membership Application</h1>
+            <p>JPCS - PTC Individual Membership Form 1 – 2026</p>
+        </section>
+
+        <section class="card">
+            <h2>Membership Application Schedule</h2>
+
+            <div class="schedule-grid">
+                <div>
+                    <label>Application Start</label>
+                    <p id="startDate">Not Set</p>
+                </div>
+                <div>
+                    <label>Application Deadline</label>
+                    <p id="deadlineDate">Not Set</p>
+                </div>
+                <div>
+                    <label>Membership End</label>
+                    <p id="endDate">Not Set</p>
+                </div>
+            </div>
+
+            <p id="scheduleMessage"></p>
+        </section>
+
+        <section class="card" id="applicationChooser" hidden>
+            <h2>Before You Apply</h2>
+            <p>
+                Select your membership application type.
+                Only one application is allowed per student account.
+            </p>
+
+            <div class="choices">
+                <label>
+                    <input type="radio" name="applicationType"
+                           value="New Membership">
+                    New Membership
+                </label>
+
+                <label>
+                    <input type="radio" name="applicationType"
+                           value="Renewal">
+                    Renewal
+                </label>
+            </div>
+
+            <small id="typeError" class="error"></small>
+        </section>
+
+        <section class="card" id="applicationArea" hidden>
+            <h2>Application for Individual Membership</h2>
+
+            <p>
+                Complete all required fields. Information will only
+                appear in CAPITAL LETTERS on the printable copy.
+            </p>
+
+            <form id="memberForm" novalidate>
+
+                <h3>Personal Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="surname">Surname *</label>
+                        <input type="text" id="surname">
+                        <small id="surnameError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="firstname">Firstname *</label>
+                        <input type="text" id="firstname">
+                        <small id="firstnameError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="middleInitial">
+                            Middle Initial (Optional)
+                        </label>
+                        <input type="text" id="middleInitial">
+                        <small id="middleInitialError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="program">Program *</label>
+                        <select id="program">
+                            <option value="BSIT">BSIT</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="yearLevel">Year Level *</label>
+                        <select id="yearLevel">
+                            <option value="">Select Year Level</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                        <small id="yearLevelError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="section">Section *</label>
+                        <input type="text" id="section"
+                               placeholder="Example: F">
+                        <small id="sectionError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Institutional Email *</label>
+                        <input type="email" id="email" readonly>
+                        <small id="emailError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="studentNo">Student No. *</label>
+                        <input type="text" id="studentNo" readonly>
+                        <small id="studentNoError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="birthDate">Date of Birth *</label>
+                        <input type="date" id="birthDate">
+                        <small id="birthDateError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="receiptNo">
+                            Receipt No. (Wait for Payment)
+                        </label>
+                        <input type="text" id="receiptNo"
+                               placeholder="Leave blank until payment">
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <label>Gender *</label>
+
+                    <div class="choices">
+                        <label>
+                            <input type="radio" name="gender" value="Male">
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Female">
+                            Female
+                        </label>
+                    </div>
+
+                    <small id="genderError" class="error"></small>
+                </div>
+
+                <h3>Applicant Declaration</h3>
+
+                <p class="declaration">
+                    I hereby voluntarily bind myself to, immediately
+                    upon acceptance into JPCS individual membership,
+                    comply with the provisions of the JPCS By-Laws,
+                    the Code of Ethics of the Filipino Computing
+                    and Information Technology Professional,
+                    and all regulations adopted by the Society.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="signature">
+                            Signature of Applicant (Type Full Name) *
+                        </label>
+                        <input type="text" id="signature">
+                        <small id="signatureError" class="error"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="signedDate">Date *</label>
+                        <input type="date" id="signedDate">
+                        <small id="signedDateError" class="error"></small>
+                    </div>
+
+                </div>
+
+                <p class="note">
+                    After submission, your application will remain
+                    Pending until verified by the administrator.
+                </p>
+
+                <div class="actions">
+                    <button type="submit" class="main-btn">
+                        Submit Application
+                    </button>
+
+                    <button type="reset" class="secondary-btn">
+                        Clear Form
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="card completed" id="alreadyApplied" hidden>
+            <h2>Membership Application Submitted</h2>
+
+            <p>
+                Your application has been recorded.
+                You can view or print your submitted form below.
+            </p>
+
+            <div class="schedule-grid">
+                <div>
+                    <label>Application Status</label>
+                    <p id="completedStatus">Pending</p>
+                </div>
+                <div>
+                    <label>Date Submitted</label>
+                    <p id="completedDate">-</p>
+                </div>
+                <div>
+                    <label>Application Type</label>
+                    <p id="completedType">-</p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="main-btn" id="viewBtn">
+                    View Form
+                </button>
+
+                <button type="button" class="main-btn" id="printBtn">
+                    Print Form
+                </button>
+
+                <button type="button" class="main-btn" id="pdfBtn">
+                    Save as PDF
+                </button>
+            </div>
+
+            <p class="note">
+                For PDF, select "Save as PDF" in your browser's
+                print destination.
+            </p>
+
+            <p class="note">
+                Please bring your Certificate of Registration (COR)
+                and your printed membership application form
+                when you visit the organization for verification.
+            </p>
+        </section>
+
+        <section class="card" id="closedMessage" hidden>
+            <h2>Application Unavailable</h2>
+            <p id="closedText">
+                The membership application period is not open.
+            </p>
+        </section>
+
+        <div class="back-section">
+            <a href="dashboard.html">Back to Dashboard</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <h3>JPCS - PTC</h3>
+        <p>Learn • Connect • Innovate</p>
+        <p>&copy; 2026 JPCS - PTC</p>
+    </footer>
+
+      <script src="js/membership.js"></script>
+      <script src="js/form-print.js"></script>
+</body>
+</html>

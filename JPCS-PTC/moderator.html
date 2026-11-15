@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/staff.css">
+    <link rel="stylesheet" href="css/officer-header.css">
+    <link rel="stylesheet" href="css/record-details.css">
+</head>
+<body>
+
+<header class="staff-header">
+    <div class="staff-header-content">
+        <h2 class="staff-brand">
+            The Junior Philippine Computer Society
+        </h2>
+        <nav id="officerNav" class="staff-nav"
+             aria-label="Officer navigation">
+        </nav>
+    </div>
+</header>
+<main>
+
+    <section class="intro">
+        <h1>Moderator - Content Management</h1>
+        <p>Create and manage announcements and event posts.</p>
+    </section>
+
+    <section class="stats">
+        <button type="button" class="stat" data-records="posts">
+            Announcements<strong id="postTotal">0</strong>
+        </button>
+        <button type="button" class="stat"
+                data-records="published-posts">
+            Published<strong id="publishedPostCount">0</strong>
+        </button>
+        <button type="button" class="stat" data-records="events">
+            Events<strong id="eventTotal">0</strong>
+        </button>
+        <button type="button" class="stat"
+                data-records="published-events">
+            Published Events<strong id="publishedEventCount">0</strong>
+        </button>
+    </section>
+    <section class="card" id="statRecordsSection" hidden>
+        <h2 id="statRecordsTitle">Records</h2>
+        <div id="statRecordsTable"
+             class="record-table-holder"></div>
+        <div id="statRecordDetail" hidden></div>
+        <button type="button" class="secondary"
+                id="closeStatRecords">Close Records</button>
+    </section>
+
+    <section class="card" id="announcements">
+        <h2>Announcements</h2>
+        <form id="announcementForm">
+            <label for="postTitle">Title</label>
+            <input id="postTitle" type="text" required>
+
+            <label for="postContent">Announcement</label>
+            <textarea id="postContent" rows="4" required></textarea>
+
+            <label for="postImage">Poster (optional, up to 500 KB)</label>
+            <input id="postImage" type="file" accept="image/*">
+
+            <label>
+                <input id="postPublished" type="checkbox" checked>
+                Published (visible to students)
+            </label>
+
+            <div class="actions">
+                <button type="submit">Save Announcement</button>
+                <button class="secondary" type="button" id="postCancel">
+                    Cancel Edit
+                </button>
+            </div>
+            <p id="postMessage" class="message" role="status"></p>
+        </form>
+        <div id="postList"></div>
+    </section>
+
+    <section class="card" id="events">
+        <h2>Events and Activities</h2>
+        <form id="eventForm">
+            <label for="eventTitle">Event Title</label>
+            <input id="eventTitle" type="text" required>
+
+            <div class="form-grid">
+                <div>
+                    <label for="eventDate">Date</label>
+                    <input id="eventDate" type="date" required>
+                </div>
+                <div>
+                    <label for="eventLocation">Location</label>
+                    <input id="eventLocation" type="text" required>
+                </div>
+            </div>
+
+            <label for="eventDescription">Description</label>
+            <textarea id="eventDescription" rows="3" required></textarea>
+
+            <label>
+                <input id="eventPublished" type="checkbox" checked>
+                Published (visible to students)
+            </label>
+
+            <div class="actions">
+                <button type="submit">Save Event</button>
+                <button class="secondary" type="button" id="eventCancel">
+                    Cancel Edit
+                </button>
+            </div>
+            <p id="eventMessage" class="message" role="status"></p>
+        </form>
+        <div id="eventList"></div>
+    </section>
+
+</main>
+<footer>&copy; 2026 JPCS - PTC</footer>
+<script src="js/roles.js"></script>
+<script src="js/record-details.js"></script>
+<script src="js/moderator.js"></script>
+</body>
+</html>

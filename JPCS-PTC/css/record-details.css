@@ -1,0 +1,92 @@
+/* Simple, shared record details and clickable statistics */
+
+button.stat,
+button.stat-box {
+    background: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+button.stat {
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button.stat strong {
+    display: block;
+    margin: 12px 0 3px;
+    font-size: 26px;
+}
+
+button.stat-box {
+    border: 1px solid #ddd;
+}
+
+button.stat:focus-visible,
+button.stat-box:focus-visible {
+    outline: 2px solid #064e35;
+    outline-offset: 2px;
+}
+
+.record-view-btn {
+    background: #064e35;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.record-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.record-detail-grid strong {
+    display: block;
+    color: #064e35;
+    font-size: 13px;
+}
+
+.record-detail-grid p {
+    margin: 6px 0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.record-table-holder {
+    overflow-x: auto;
+}
+
+.record-table-holder table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+}
+
+.record-table-holder th,
+.record-table-holder td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.record-table-holder th {
+    color: white;
+    background: #064e35;
+}
+
+@media (max-width: 700px) {
+    .record-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/officer-header.css">
+    <link rel="stylesheet" href="css/record-details.css">
+</head>
+<body>
+
+<header class="staff-header">
+    <div class="staff-header-content">
+        <h2 class="staff-brand">
+            The Junior Philippine Computer Society
+        </h2>
+        <nav id="officerNav" class="staff-nav"
+             aria-label="Officer navigation">
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="page-title">
+        <h1>Admin Panel</h1>
+        <p>JPCS - PTC Membership Management System</p>
+    </section>
+
+    <!-- Clickable Statistics -->
+    <section class="stats">
+
+        <button class="stat-box" data-records="students">
+            <h3>Registered Students</h3>
+            <p id="totalStudents">0</p>
+        </button>
+
+        <button class="stat-box" data-records="all">
+            <h3>Total Applications</h3>
+            <p id="totalApplications">0</p>
+        </button>
+
+        <button class="stat-box" data-records="Pending">
+            <h3>Pending</h3>
+            <p id="pendingCount">0</p>
+        </button>
+
+        <button class="stat-box" data-records="Active">
+            <h3>Active Members</h3>
+            <p id="activeCount">0</p>
+        </button>
+
+        <button class="stat-box" data-records="Inactive">
+            <h3>Inactive Members</h3>
+            <p id="inactiveCount">0</p>
+        </button>
+
+    </section>
+
+    <!-- Records Display -->
+    <section class="card" id="recordsSection" hidden>
+
+        <h2 id="recordsTitle">Records</h2>
+
+        <div class="filters">
+            <input
+                type="search"
+                id="recordsSearch"
+                placeholder="Search records"
+            >
+        </div>
+
+        <div id="statRecordsTable"
+             class="record-table-holder"></div>
+        <div id="statRecordDetail" hidden></div>
+
+        <button type="button" class="secondary-btn"
+                id="closeRecordsBtn">
+            Close
+        </button>
+
+    </section>
+
+    <!-- Membership Schedule -->
+    <section class="card">
+        <h2>Membership Schedule</h2>
+        <p>Set the official application and membership dates.</p>
+
+        <form id="calendarForm">
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label for="applicationStart">
+                        Application Start Date
+                    </label>
+                    <input type="date" id="applicationStart" required>
+                </div>
+
+                <div class="field">
+                    <label for="applicationDeadline">
+                        Application Deadline
+                    </label>
+                    <input type="date" id="applicationDeadline" required>
+                </div>
+
+                <div class="field">
+                    <label for="membershipEnd">
+                        Membership End Date
+                    </label>
+                    <input type="date" id="membershipEnd" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="main-btn">
+                Save Membership Dates
+            </button>
+
+            <p id="calendarMessage" class="message" role="status"></p>
+
+        </form>
+    </section>
+
+    <!-- Applications -->
+    <section class="card">
+
+        <div class="section-heading">
+            <h2>Student Applications</h2>
+            <a href="applications.html" class="main-btn">
+                Manage Applications
+            </a>
+        </div>
+
+        <p>Review student membership applications.</p>
+
+        <div class="filters">
+            <input
+                type="search"
+                id="applicationSearch"
+                placeholder="Search name, Student ID, or email"
+            >
+
+            <select id="applicationFilter">
+                <option value="All">All Applications</option>
+                <option value="Pending">Pending</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                        <th>Application Type</th>
+                        <th>Date Submitted</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="applicationsTable"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- Application Details -->
+    <section class="card" id="applicationDetails" hidden>
+
+        <h2>Application Details</h2>
+
+        <div class="info-grid">
+            <div>
+                <label>Full Name</label>
+                <p id="detailName">-</p>
+            </div>
+
+            <div>
+                <label>Student ID</label>
+                <p id="detailId">-</p>
+            </div>
+
+            <div>
+                <label>Institutional Email</label>
+                <p id="detailEmail">-</p>
+            </div>
+
+            <div>
+                <label>Course / Section</label>
+                <p id="detailCourse">-</p>
+            </div>
+
+            <div>
+                <label>Application Type</label>
+                <p id="detailType">-</p>
+            </div>
+
+            <div>
+                <label>Receipt Number</label>
+                <p id="detailReceipt">-</p>
+            </div>
+
+            <div>
+                <label>Membership Status</label>
+                <p id="detailStatus">-</p>
+            </div>
+        </div>
+
+        <h3>Complete Submitted Membership Form</h3>
+        <div id="completeApplicationDetails"></div>
+
+        <p class="note">
+            Verify the student's payment and eligibility
+            before approving membership.
+        </p>
+
+        <div class="actions">
+            <button type="button" class="main-btn" id="approveBtn">
+                Approve Membership
+            </button>
+
+            <button type="button" class="secondary-btn" id="inactiveBtn">
+                Mark Inactive
+            </button>
+
+            <button type="button" class="secondary-btn"
+                    id="closeDetailsBtn">
+                Close
+            </button>
+        </div>
+
+        <p id="applicationMessage" class="message" role="status"></p>
+
+    </section>
+
+    <!-- Registered Accounts -->
+    <section class="card">
+
+        <div class="section-heading">
+            <h2>Registered Student Accounts</h2>
+            <a href="members.html" class="main-btn">
+                Members Management
+            </a>
+        </div>
+
+        <div class="filters">
+            <input
+                type="search"
+                id="accountSearch"
+                placeholder="Search registered students"
+            >
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Full Name</th>
+                        <th>Institutional Email</th>
+                        <th>Course</th>
+                        <th>Year & Section</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="accountsTable"></tbody>
+            </table>
+        </div>
+        <div id="adminStudentDetails" hidden></div>
+
+    </section>
+
+    <!-- Announcements -->
+    <section class="card">
+
+        <h2>Manage Announcements</h2>
+
+        <form id="announcementForm">
+
+            <div class="field">
+                <label for="announcementTitle">Title</label>
+                <input type="text" id="announcementTitle" required>
+            </div>
+
+            <div class="field">
+                <label for="announcementContent">Content</label>
+                <textarea id="announcementContent"
+                          rows="5" required></textarea>
+            </div>
+
+            <div class="field">
+                <label for="announcementImage">
+                    Image (Optional)
+                </label>
+                <input
+                    type="file"
+                    id="announcementImage"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+            </div>
+
+            <button type="submit" class="main-btn">
+                Post Announcement
+            </button>
+
+            <p id="announcementMessage" class="message" role="status"></p>
+
+        </form>
+
+        <h3>Posted Announcements</h3>
+        <div id="adminAnnouncementList"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    <h3>JPCS - PTC</h3>
+    <p>Learn • Connect • Innovate</p>
+    <p>&copy; 2026 JPCS - PTC</p>
+</footer>
+
+<script src="js/roles.js"></script>
+<script src="js/record-details.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

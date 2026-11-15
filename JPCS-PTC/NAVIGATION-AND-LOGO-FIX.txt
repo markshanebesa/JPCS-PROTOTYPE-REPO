@@ -1,0 +1,30 @@
+JPCS–PTC: OFFICER NAVIGATION + LOGO FIX
+
+Start the website from the extracted JPCS-PTC folder in VS Code.
+Use Live Server, then open login.html with a student or demo officer account.
+
+CHANGES
+- Full header name: The Junior Philippine Computer Society.
+- Same officer navigation on every permitted officer page.
+- Moderator: Content Management, Announcements, Events, Logout.
+- Co-Admin: Co-Admin Panel, Applications, Members, Logout.
+- Main Admin: Admin Panel, Applications, Members, Co-Admin,
+  Content, Staff Accounts, Reports, Logout.
+- Organization Head: Reports, Announcements, Upcoming Events, Logout.
+- Fixed logo filename and relative paths on login, signup,
+  forgot password, landing page, and student dashboard.
+- Added real placeholders for missing achievement photos.
+
+FILES ADDED
+- css/officer-header.css
+- assets/jpcs-logo-fixed.png
+- assets/achievement1.jpg through achievement4.jpg
+
+FILES MODIFIED
+- js/roles.js
+- admin.html, applications.html, members.html,
+  moderator.html, co-admin.html, organization-head.html, staff-users.html
+- login.html, signup.html, forgot-password.html, index.html, dashboard.html
+
+All other existing website code stays in place.
+Demo-only localStorage accounts are not a secure multi-user system.

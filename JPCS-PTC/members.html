@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Management | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/officer-header.css">
+    <link rel="stylesheet" href="css/record-details.css">
+</head>
+<body>
+
+    <header class="staff-header">
+    <div class="staff-header-content">
+        <h2 class="staff-brand">
+            The Junior Philippine Computer Society
+        </h2>
+        <nav id="officerNav" class="staff-nav"
+             aria-label="Officer navigation">
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+
+        <section class="page-title">
+            <h1>Members Management</h1>
+            <p>View and manage JPCS - PTC student memberships.</p>
+        </section>
+
+        <section class="stats">
+
+            <button type="button" class="stat-box">
+                <h3>Total Applicants</h3>
+                <p id="totalMembers">0</p>
+            </button>
+
+            <button type="button" class="stat-box">
+                <h3>Active Members</h3>
+                <p id="activeMembers">0</p>
+            </button>
+
+            <button type="button" class="stat-box">
+                <h3>Inactive Members</h3>
+                <p id="inactiveMembers">0</p>
+            </button>
+
+            <button type="button" class="stat-box">
+                <h3>Pending Applications</h3>
+                <p id="pendingMembers">0</p>
+            </button>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Members List</h2>
+
+            <div class="filters">
+
+                <div class="field">
+                    <label for="searchMember">Search Member</label>
+                    <input
+                        type="text"
+                        id="searchMember"
+                        placeholder="Search name, Student ID, or email"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="statusFilter">Membership Status</label>
+                    <select id="statusFilter">
+                        <option value="All">All Members</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Full Name</th>
+                            <th>Course</th>
+                            <th>Year & Section</th>
+                            <th>Membership Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="membersTable">
+                        <tr>
+                            <td colspan="6">No members found.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section class="card" id="memberDetails" hidden>
+
+            <h2>Member Information</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <label>Full Name</label>
+                    <p id="detailName">-</p>
+                </div>
+
+                <div>
+                    <label>Student ID</label>
+                    <p id="detailStudentId">-</p>
+                </div>
+
+                <div>
+                    <label>Institutional Email</label>
+                    <p id="detailEmail">-</p>
+                </div>
+
+                <div>
+                    <label>Course</label>
+                    <p id="detailCourse">-</p>
+                </div>
+
+                <div>
+                    <label>Year and Section</label>
+                    <p id="detailYearSection">-</p>
+                </div>
+
+                <div>
+                    <label>Contact Number</label>
+                    <p id="detailContact">-</p>
+                </div>
+
+                <div>
+                    <label>Application Type</label>
+                    <p id="detailType">-</p>
+                </div>
+
+                <div>
+                    <label>Application Status</label>
+                    <p id="detailStatus">-</p>
+                </div>
+
+                <div>
+                    <label>Date Submitted</label>
+                    <p id="detailDate">-</p>
+                </div>
+
+            </div>
+
+            <h3>Complete Submitted Membership Form</h3>
+            <div id="completeMemberDetails"></div>
+
+            <p id="actionMessage" role="status"></p>
+
+            <div class="actions">
+                <button type="button" class="main-btn" id="approveBtn">
+                    Approve Membership
+                </button>
+
+                <button type="button" class="secondary-btn" id="inactiveBtn">
+                    Mark Inactive
+                </button>
+
+                <button type="button" class="secondary-btn" id="closeBtn">
+                    Close
+                </button>
+            </div>
+
+        </section>
+
+        <div class="back-section">
+            <a href="admin.html">Back to Admin Panel</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <h3>JPCS - PTC</h3>
+        <p>Learn • Connect • Innovate</p>
+        <p>&copy; 2026 JPCS - PTC</p>
+    </footer>
+
+    <script src="js/roles.js"></script>
+<script src="js/record-details.js"></script>
+<script src="js/members.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f5f2;
+    color: #26352c;
+}
+
+.container {
+    width: min(1100px, 94%);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: #064e35;
+    padding: 14px 20px;
+}
+
+.header-content {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand img {
+    width: 65x;
+    height: 48px;
+    object-fit: contain;
+}
+
+.brand h2 {
+    margin: 0;
+    color: #f5e729;
+    font-size: 21px;
+}
+
+#logoutBtn {
+    background: #f5e729;
+    color: #064e35;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* First section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero-about p {
+    max-width: 480px;
+    line-height: 1.7;
+}
+
+
+.hero-about h1 {
+    color: #064e35;
+    font-size: 27px;
+    margin: 0 0 20px;
+}
+
+.hero-about h2 {
+    color: #064e35;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.hero-about p {
+    line-height: 1.7;
+}
+
+.primary-link {
+    display: inline-block;
+    background: #064e35;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+/* Vision and Mission */
+.vision-section {
+    background-image: url('/assets/blur_img.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.vision-overlay {
+    background: rgba(0, 57, 31, 0.82);
+    color: white;
+    padding: 45px 0;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+.vision-grid h2 {
+    font-size: 29px;
+    margin: 0 0 14px;
+}
+
+.vision-grid p,
+.vision-grid li {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.vision-grid ul {
+    padding-left: 22px;
+}
+
+.vision-grid li {
+    margin-bottom: 9px;
+}
+
+/* Header page links */
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.header-nav a {
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible {
+    text-decoration: underline;
+}
+
+footer {
+    background: #033b28;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+@media (max-width: 700px) {
+    .hero,
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-photo {
+        min-height: 240px;
+    }
+
+    .hero-about {
+        min-height: 0;
+        padding: 25px;
+    }
+
+    .explore-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .brand img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .brand h2 {
+        font-size: 17px;
+    }
+}
+
+/* ACHIEVEMENTS PHOTO GALLERY */
+
+.achievements-gallery {
+    background: #f2f5f2;
+    padding: 40px 0;
+}
+
+.gallery-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 0 25px 15px;
+    scroll-snap-type: x mandatory;
+}
+
+.gallery-photo {
+    flex: 0 0 65%;
+    height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    background: #e1e6e1;
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* MOBILE VIEW */
+
+@media (max-width: 700px) {
+
+    .achievements-gallery {
+        padding: 25px 0;
+    }
+
+    .gallery-scroll {
+        gap: 12px;
+        padding: 0 15px 15px;
+    }
+
+    .gallery-photo {
+        flex-basis: 90%;
+        height: 250px;
+    }
+}

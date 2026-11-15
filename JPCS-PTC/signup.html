@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | JPCS - PTC</title>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+    <div class="signup-box">
+
+        <div class="logos">
+            <img src="assets/jpcs-logo-fixed.png" alt="JPCS Logo">
+            <img src="assets/ptc-seal-official.png" alt="PTC Logo">
+        </div>
+
+        <h1>JPCS - PTC</h1>
+        <h2>Student Registration</h2>
+
+
+        <form id="signupForm" novalidate>
+
+            <p class="section-title">Personal Information</p>
+
+            <div class="row">
+                <div class="field">
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname"
+                           placeholder="Enter surname">
+                    <small id="surnameError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="givenName">Given Name</label>
+                    <input type="text" id="givenName"
+                           placeholder="Enter given name">
+                    <small id="givenNameError" class="error"></small>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="middleInitial">Middle Initial (Optional)</label>
+                <input type="text" id="middleInitial"
+                       maxlength="3" placeholder="Example: D.">
+                <small id="middleInitialError" class="error"></small>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label for="birthDate">Date of Birth</label>
+                    <input type="date" id="birthDate">
+                    <small id="birthDateError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label>Gender</label>
+                    <div class="choices">
+                        <label>
+                            <input type="radio" name="gender" value="Male">
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Female">
+                            Female
+                        </label>
+                    </div>
+                    <small id="genderError" class="error"></small>
+                </div>
+            </div>
+
+            <p class="section-title">Student Information</p>
+
+            <div class="row">
+                <div class="field">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId"
+                           placeholder="Enter student ID">
+                    <small id="studentIdError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="course">Course</label>
+                    <select id="course">
+                        <option value="BSIT" selected>BSIT</option>
+                        <option value="CCS" selected>CCS</option>
+                    </select>
+                    <small id="courseError" class="error"></small>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="yearSection">Year and Section</label>
+                <input type="text" id="yearSection"
+                       placeholder="Example: 3F">
+                <small id="yearSectionError" class="error"></small>
+            </div>
+
+            <div class="field">
+                <label>Student Classification</label>
+                <div class="choices">
+                    <label>
+                        <input type="radio" name="classification"
+                               value="Regular">
+                        Regular
+                    </label>
+                    <label>
+                        <input type="radio" name="classification"
+                               value="Irregular">
+                        Irregular
+                    </label>
+                </div>
+                <small id="classificationError" class="error"></small>
+            </div>
+
+            <div class="field">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" maxlength="11"
+                       placeholder="09XXXXXXXXX">
+                <small id="contactError" class="error"></small>
+            </div>
+
+            <p class="section-title">Account Information</p>
+
+            <div class="field">
+                <label for="signupEmail">Institutional Email</label>
+                <input type="email" id="signupEmail"
+                       placeholder="Enter PTC institutional email">
+                <small class="hint">
+                    Only @paterostechnologicalcollege.edu.ph
+                    email addresses are allowed.
+                </small>
+                <small id="signupEmailError" class="error"></small>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-box">
+                        <input type="password" id="signupPassword"
+                               placeholder="Enter password">
+                        <button type="button"
+                                id="showPassword">Show</button>
+                    </div>
+                    <small id="signupPasswordError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-box">
+                        <input type="password" id="confirmPassword"
+                               placeholder="Confirm password">
+                        <button type="button"
+                                id="showConfirmPassword">Show</button>
+                    </div>
+                    <small id="confirmPasswordError" class="error"></small>
+                </div>
+            </div>
+
+            <button type="submit" class="signup-btn">
+                Create Account
+            </button>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="login.html">Log In</a>
+            </p>
+
+        </form>
+
+        <div id="signupSuccess" class="success-box" hidden>
+            <h2>Account Created Successfully!</h2>
+            <p>
+                Your JPCS - PTC account has been created.
+                You can now log in using your registered
+                institutional email and password.
+            </p>
+            <a href="login.html" class="login-button">
+                Go to Login
+            </a>
+        </div>
+
+        <a href="index.html" class="back">Back to Home</a>
+
+    </div>
+
+    <script src="js/signup.js"></script>
+
+</body>
+</html>
